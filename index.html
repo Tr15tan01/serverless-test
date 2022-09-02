@@ -16,7 +16,7 @@
     </form>
     <script>
         // const url = "http://localhost:8888/.netlify/functions/app"
-        // const url = "/.netlify/functions/app"
+        const url1 = "/.netlify/functions/app"
         const url = "https://jsonplaceholder.typicode.com/todos/1"
         const headers = {
             "Access-Control-Allow-Origin": "*",
@@ -30,6 +30,13 @@
         //     headers: headers
         // }).then(res => console.log(res)).catch(err => console.error(err))
         fetch(url)
+            .then(response => response.json())
+            .then(json => console.log(json))
+
+        console.log('another fetch')
+
+
+        fetch(url1)
             .then(response => response.json())
             .then(json => console.log(json))
     </script>
